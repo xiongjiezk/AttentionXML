@@ -1,0 +1,22 @@
+name: Zhihu-100K
+
+train:
+  texts: data/Zhihu-100K/train_texts.npy
+  labels: data/Zhihu-100K/train_labels.npy
+
+valid:
+  size: 4000
+
+test:
+  texts: data/Zhihu-100K/test_texts.npy
+
+embedding:
+  emb_init: data/Zhihu-100K/emb_init.npy
+
+output:
+  res: results
+
+labels_binarizer: data/Zhihu-100K/labels_binarizer
+
+model:
+  emb_size: 64

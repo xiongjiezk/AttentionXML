@@ -18,8 +18,10 @@ from typing import Union, Iterable
 
 
 __all__ = ['build_vocab', 'get_data', 'convert_to_binary', 'truncate_text', 'get_word_emb', 'get_mlb',
-           'get_sparse_feature', 'output_res']
+           'get_sparse_feature', 'output_res', 'load_word2vec_format']
 
+def load_word2vec_format(file_path):
+    return KeyedVectors.load_word2vec_format(file_path)
 
 def build_vocab(texts: Iterable, w2v_model: Union[KeyedVectors, str], vocab_size=500000,
                 pad='<PAD>', unknown='<UNK>', sep='/SEP/', max_times=1, freq_times=1):

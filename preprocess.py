@@ -41,6 +41,10 @@ def main(text_path, tokenized_path, label_path, vocab_path, emb_path, w2v_model,
                 print(*tokenize(line), file=fout)
         text_path = tokenized_path
 
+    if isinstance(w2v_model, str) and w2v_model.endswith("txt"):
+        logger.info(F'loading word2vec file. {w2v_model}')
+        w2v_model = load_word2vec_format(w2v_model)
+        
     if not os.path.exists(vocab_path):
         logger.info(F'Building Vocab. {text_path}')
         with open(text_path) as fp:
